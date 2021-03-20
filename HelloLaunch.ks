@@ -100,7 +100,6 @@ function lockSteeringAtManeuverTarget{
 }
 
 function isManeuverComplete{
-    print "Checking is complete".
     parameter mnv.
     if not(defined originalVector) or originalVector = -1 {
         declare global originalVector to mnv:burnvector.
@@ -115,6 +114,7 @@ function isManeuverComplete{
 function removeManeuverFromFlightPlan{
     parameter mnv.
     print "Removing it".
+    lock steering to prograde.
     remove mnv.
 }
 
