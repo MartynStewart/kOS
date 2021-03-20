@@ -70,7 +70,6 @@ function  executeManeuver {
     wait until time:seconds > startTime.
     lock throttle to 1.
     wait until isManeuverComplete(mnv).
-    print "Completed check".
     lock throttle to 0.
     removeManeuverFromFlightPlan(mnv).
 }
@@ -78,6 +77,7 @@ function  executeManeuver {
 function addManeuverToFlightPlan{
     parameter mnv.
     add mnv.
+    wait 1.
 }
 
 function calculateStartTime{
